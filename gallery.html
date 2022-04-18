@@ -7,48 +7,38 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-    <link href="layout/styles/contact_form.css" rel="stylesheet">
+    <link href="layout/styles/contact_form.css" rel="stylesheet" type="text/css">
   </head>
   <body id="top">
+    <!-- View_img container -->
+    <div id="view_img" class="view_img_container clear"></div>
 
     <!-- Contact Form -->
-    <div id="contact">
-      <form id="contact_form" action="send_mail.php" method="POST">
-        <ul>
-          <h1>Contact</h1>
-          <li>
-            <input type="text" name="name" id="name" placeholder="&#xf2c0; Full name" required>
-            <input type="email" name="email" id="email" placeholder="&#xf003; Email" required>
-          </li>
-          <li>
-            <textarea name="message" id="message" placeholder="&#xf040; Your message" required></textarea>
-          </li>
-          <li>
-            <input type="submit" name="submit" id="submit" value="Send">
-          </li>
-        </ul>
-      </form>
+    <div w3-include-HTML="contact_form.html"><div id="contact"></div></div>
+    <script>w3.includeHTML();</script>
+
+    <!-- Google Calendar -->
+    <div id="google_calendar" class="view_calendar_container">
+      <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&src=N3NlZ2YyNWJsaGljaTZvMTUwMWJvMGd1a2NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457&color=%230B8043" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
     </div>
 
     <!-- Navigation -->
-    <div class="bgded overlay" style="background-image:url('images/bg3.jpg');">
+    <div class="bgded overlay" style="background-image:url('images/background/bg3.jpg');">
       <header id="header" class="hoc clear">
         <div id="logo" class="one_quarter first">
-          <h1><a href="index.html">
-          <img src="images/Logo Compact 720px.png" alt="Domicile Logo">
-          </a></h1>
+          <h1><a href="index.html"><img src="images/logo/Logo Compact w720.png"></a></h1>
           <p><br>Minneapolis</p>
         </div>
         <div class="three_quarter">
           <ul class="nospace clear">
             <li class="one_third first">
-              <div class="block clear"><a target="_blank" href="tel:+1-888-436-6424"><i class="fas fa-phone"></i></a> <span><strong>Call:</strong> (888) 436-6424</span></div>
+              <div class="block clear"><a href="tel:+1-888-436-6424"><i class="fas fa-phone"></i></a><span><strong>Call:</strong> (888) 436-6424</span></div>
             </li>
             <li class="one_third">
-              <div class="block clear"><a target="_blank"><i id="envelope" class="fas fa-envelope"></i></a> <span><strong>Email:</strong> benjamin@domiciledesigns.net</span></div>
+              <div class="block clear"><a><i id="envelope" class="fas fa-envelope"></i></a><span><strong>Email:</strong> benjamin@domiciledesigns.net</span></div>
             </li>
             <li class="one_third">
-              <div class="block clear"><a target="_blank" href="#"><i class="fas fa-clock"></i></a> <span><strong> Monday - Sunday:</strong> 9:00 am - 5:00 pm</span></div>
+              <div class="block clear"><a><i class="fas fa-clock"></i></a><span><strong> Monday - Sunday:</strong> 9:00 am - 5:00 pm</span></div>
             </li>
           </ul>
         </div>
@@ -58,7 +48,7 @@
           <ul class="clear">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Domicile</a></li>
-            <li><a href="coming_soon.html">Reviews</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
             <li class="active"><a href="gallery.html">Gallery</a></li>
           </ul>
         </nav>
@@ -77,7 +67,14 @@
       <div id="breadcrumb" class="hoc clear">
         <h6 class="heading">Gallery</h6>
         <ul>
-          <li><a href="#">Main</a></li>
+          <li><a id="gallery_Featured" class="topics active">Featured</a></li><!--Use tag: "Featured"-->
+          <li><a id="gallery_Sauna" class="topics">Sauna</a></li><!--Use tag: "Sauna"-->
+          <li><a id="gallery_Repairs" class="topics">Repairs</a></li><!--Use tag: "Repairs"-->
+          <li><a id="gallery_Remodels" class="topics">Remodels</a></li><!--Use tag: "Remodels"-->
+          <li><a id="gallery_Before/After" class="topics">Before/After</a></li><!--Use tag: "Before/After"-->
+          <li><a id="gallery_Videos" class="topics">Videos</a></li><!--Use tag: "Videos"-->
+          <li><a id="gallery_Stock" class="topics">Stock Samples</a></li><!--Use tag: "Stock"-->
+          <li><a id="gallery_ALL" class="topics">All Photos</a></li><!--Use tag: "ALL"-->
         </ul>
       </div>
     </div>
@@ -89,47 +86,78 @@
         <div class="content">
           <div id="gallery">
             <figure>
-              <header class="heading">Main gallery</header>
+              <header id="topic_label" class="heading">Featured</header>
               <ul class="nospace clear">
-                <li class="one_quarter first"><a href="#"><img src="images/demo/gallery/01.png" alt=""></a></li>
-                <li class="one_quarter"><a href="#"><img src="images/demo/gallery/01.png" alt=""></a></li>
-                <li class="one_quarter"><a href="#"><img src="images/demo/gallery/01.png" alt=""></a></li>
-                <li class="one_quarter"><a href="#"><img src="images/demo/gallery/01.png" alt=""></a></li>
-                </ul>
-              <figcaption>Gallery description</figcaption>
+
+                <li class="one_quarter imgover"><img class="ALL Featured Remodels" src="images/client/Website gallery bedroom.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Featured" src="images/client/Website Gallery Bath remodel.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Featured" src="images/client/Website Gallery Window trim.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Featured" src="images/client/Website gallery.jpg"></li>
+
+                <li class="one_quarter imgover"><img class="ALL Sauna" src="images/client/Website Sauna1.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Sauna" src="images/client/Website Sauna2.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Sauna" src="images/client/Website Sauna3.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Sauna" src="images/client/Website Sauna4.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Sauna" src="images/client/Website Sauna5.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Sauna" src="images/client/Website Sauna6.jpg"></li>
+
+                <li class="one_quarter imgover"><img class="ALL Repairs" src="images/client/Website Deck posts.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Repairs" src="images/client/Website Covered porch posts-fence.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Repairs" src="images/client/Website gallery BR ceiling before.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Repairs" src="images/client/Website gallery before baseboard.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Repairs" src="images/client/Website mold example.jpg"></li>
+
+                <li class="one_quarter imgover"><img class="ALL Before/After Repairs" src="images/client/Website gallery post wrapping2.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Before/After Repairs" src="images/client/Website gallery post wrapping.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Before/After Repairs" src="images/client/Website gallery before after.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Before/After Repairs" src="images/client/Website Gallery fence.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Before/After Repairs" src="images/client/Website Gallery Gate.jpg"></li>
+
+                <li class="one_quarter imgover"><img class="ALL" src="images/client/Website Pressure wash.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL" src="images/client/Website Paint.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL" src="images/client/Website Basements.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL" src="images/client/Website Project Workup Deck 1.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL" src="images/client/Website Project Workup Deck 2.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL" src="images/client/Website Project Workup Fireplace 1.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL" src="images/client/Website Project Workup Fireplace 2.jpg"></li>
+
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Background Website Front cover photo.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website DIY 2.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website DIY workshop.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website fireplace.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website Flooring install.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website Gallery Paint.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website Gallery Plan.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website Gallery stock.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website Handyman.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website Pic Gallery.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website Post service handshake.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website pressure washer.jpg"></li>
+                <li class="one_quarter imgover"><img class="ALL Stock" src="images/client/Website project management.jpg"></li>
+
+                <li class="one_quarter imgover"><img class="ALL Videos" src="images/client/Website gallery before vid.mp4"></li>
+                <li class="one_quarter imgover"><img class="ALL Videos" src="images/client/Website Gallery wood finishing.mp4"></li>
+                <li class="one_quarter imgover"><img class="ALL Videos" src="images/client/Website Pressure wash vid.mp4"></li>
+              </ul>
+              <figcaption></figcaption>
             </figure>
           </div>
-          <!--<nav class="pagination">
-            <ul>
-              <li><a href="#">&laquo; Previous</a></li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><strong>&hellip;</strong></li>
-              <li><a href="#">6</a></li>
-              <li class="current"><strong>7</strong></li>
-              <li><a href="#">8</a></li>
-              <li><a href="#">9</a></li>
-              <li><strong>&hellip;</strong></li>
-              <li><a href="#">14</a></li>
-              <li><a href="#">15</a></li>
-              <li><a href="#">Next &raquo;</a></li>
-            </ul>
-          </nav>-->
         </div>
         <!-- / main body -->
-        <div class="clear"></div>
       </main>
     </div>
 
     <!-- Bottom Background Image Wrapper -->
-    <div class="bgded overlay" style="background-image:url('images/bg4.jpg');">
+    <div class="bgded overlay" style="background-image:url('images/background/bg4.jpg');">
       <footer id="footer" class="hoc clear">
         <div class="center btmspace-50">
-          <h6 class="heading">Domicile Designs</h6>
+          <h1><a href="index.html"><img class="flp" src="images/logo/Logo w520.png" alt="Domicile Designs"></a></h1>
           <ul class="faico clear">
-            <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a class="faicon-facebook" href="https://www.facebook.com/DomicileDesignsLLC"><i class="fab fa-facebook"></i></a></li>
+            <!--
             <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
             <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+            -->
           </ul>
           <p class="nospace">Minneapolis</p>
         </div>
@@ -146,12 +174,16 @@
 
     <!-- Back to top button -->
     <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+    <a id="bottom_envelope"><i id="envelope" class="fas fa-envelope"></i></a>
 
     <!-- JAVASCRIPTS -->
     <script src="layout/scripts/jquery.min.js"></script>
     <script src="layout/scripts/jquery.backtotop.js"></script>
     <script src="layout/scripts/jquery.mobilemenu.js"></script>
     <script src="layout/scripts/contact_form.js"></script>
+    <script src="layout/scripts/view_elements.js"></script>
+    <script src="layout/scripts/gallery.js"></script>
+    <script src="layout/scripts/stopscroll.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   </body>
 </html>

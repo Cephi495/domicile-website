@@ -217,7 +217,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #breadcrumb ul{margin:0; padding:0; list-style:none; text-transform:uppercase;}
 #breadcrumb li{display:inline-block; margin:0 6px 0 0; padding:0;}
 #breadcrumb li a{display:block; position:relative; margin:0; padding:0 12px 0 0; font-size:12px;}
-#breadcrumb li a::after{top:4px; right:0; content:"\f0da";}
+#breadcrumb li a::after{top:4px; right:0; content:"|";}
 #breadcrumb li:last-child a{margin:0; padding:0;}
 #breadcrumb li:last-child a::after{display:none;}
 #breadcrumb .heading{margin:0; font-size:2rem;}
@@ -244,6 +244,11 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #backtotop.visible{visibility:visible; opacity:.5;}
 #backtotop:hover{opacity:1;}
 
+#bottom_envelope{z-index:1; display:inline-block; position:fixed; visibility:hidden; bottom:20px; right:60px; width:36px; height:36px; line-height:36px; font-size:16px; text-align:center; opacity:.2;}
+#bottom_envelope i{display:block; width:100%; height:100%; line-height:inherit;}
+#bottom_envelope.visible{visibility:visible; opacity:.5; cursor: pointer; background: #222;}
+#bottom_envelope:hover{opacity:1;}
+
 
 /* Tables
 --------------------------------------------------------------------------------------------------------------- */
@@ -259,6 +264,8 @@ td{border-width:0 1px;}
 #gallery{display:block; width:100%; margin-bottom:50px;}
 #gallery figure figcaption{display:block; width:100%; clear:both;}
 #gallery li{margin-bottom:30px;}
+.topics{cursor:pointer}
+.hide_gallery_img{display: none;}
 
 
 /* Font Awesome Social Icons
@@ -370,7 +377,7 @@ input:focus, textarea:focus, *:required:focus{border-color:var(--main-color);}
 #mainav form select{color:#474747; background-color:#FFFFFF;}
 
 #breadcrumb a{color:inherit; background-color:inherit;}
-#breadcrumb li:last-child a{color:var(--main-color);}
+#breadcrumb .active{color:var(--main-color);}
 
 .container .sidebar nav a{color:inherit; border-color:#D7D7D7;}
 .container .sidebar nav a:hover{color:var(--main-color);}
@@ -485,4 +492,76 @@ table a, #comments a{background-color:inherit;}
 
 	.font-x2{font-size:1.4rem;}
 	.font-x3{font-size:1.6rem;}
+}
+
+.pfp{
+  width: 30%;
+  max-width: 200px;
+  height: 100%;
+}
+.flp{
+  width: 50%;
+  max-width: 300px;
+  height: 100%;
+}
+.fwp{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+}
+
+.view_img_container{
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  padding: 10%;
+  height: 100%;
+  width: 100%;
+  display: none;
+  padding-top: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(1,0,8,.95);
+  overflow: scroll;
+}
+.view_calendar_container{
+  position:fixed;
+  z-index: 3;
+  top: 0;
+  left: 5%;
+  height: 35%;
+  width: 90%;
+  display: none;
+  margin-top: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  resize: both;
+  background-color: rgba(1,0,8,.65);
+  overflow: hidden;
+}
+body.stop_scroll{
+  position: fixed;
+}
+.close_element {
+  position: fixed;
+  top: 10px;
+  right: 40px;
+  padding: 20px;
+  height: auto;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 2.5em;
+  color: #d61b3a;
+  border-radius: 10px;
+  background-color: rgba(1,0,8,.65);
+}
+.close_element:hover{
+  font-size: 3em;
 }

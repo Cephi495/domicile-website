@@ -5,6 +5,8 @@
   height: 100%;
   background-color: rgba(1,0,8,.95);
   position: fixed;
+  overflow-y:scroll;
+  overflow-x:hidden;
   top: 0;
   z-index: 2
 }
@@ -25,36 +27,97 @@
   padding-top: 30px;
   margin-top: auto;
 }
-#contact input {
+.form_input {
+  background: none;
   border: none;
-  width: 80%;
+  width: 75%;
   height: auto;
   margin: 10px auto;
-  background: none;
-  max-width: 450px;
+  max-width: 550px;
   padding: 10px;
-  font-family: 'Fontawesome', 'Source Sans Pro', sans-serif;
+  font-family: Monaco;
   border-bottom: 2px solid #333366;
-  color: #fff;
+  color: rgb(255,255,255);
 }
 #contact textarea{
   border: none;
-  width: 80%;
+  width: 75%;
   height: 100px;
   margin: 10px auto;
   background: none;
-  max-width: 450px;
+  max-width: 550px;
   padding: 10px;
-  font-family: 'Fontawesome', 'Source Sans Pro', sans-serif;
+  font-family: Monaco;
   border-bottom: 2px solid #333366;
-  color: #fff;
+  color: rgb(255,255,255);
 }
 #contact textarea:focus, #contact  input:focus{
   outline: none;
 }
+.fob_container{
+  margin: 10px auto;
+  max-width: 550px;
+  width: 75%;
+}
+.option_box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+  float: left;
+  color: #ccc;
+}
+.ob_lvl1 {
+  border: 2px solid #333366;
+  box-sizing: border-box;
+}
+.ob_lvl2{
+  display: none;
+}
+.ob_lvl3{
+  display: none;
+}
+.ob_content{
+  font-family: Monaco;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  color: rgb(100, 100, 230);
+}
+.option_box p{
+  font-family: Monaco;
+  justify-content: center;
+  align-content: center;
+  line-height: 25px;
+}
+.fob_check{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+#x_srv[type=checkbox]:checked ~ div{
+  background-color: rgba(50,50,100,.7);
+  color: rgba(255,255,255,1);
+}
+.fob_check[type=checkbox]:checked ~ div{
+  color: #ff9933;
+}
+.fob_check[type=checkbox]:checked:hover ~ div{
+  text-decoration: line-through;
+}
+
 #contact #submit {
-  margin-top: 3em;
-  margin-bottom: 0;
+  margin-top: 2em;
+  margin-bottom: 100px;
   text-transform: uppercase;
   color: #fff;
   background: transparent;
@@ -63,6 +126,7 @@
 #contact #submit:hover {
   color: #ff9933;
   background: #333366;
+  cursor: pointer;
 }
 #contact .close {
   position: absolute;

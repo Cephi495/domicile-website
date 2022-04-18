@@ -1,0 +1,226 @@
+<form id="contact_form" action="send_mail.php" method="POST">
+  <ul>
+    <h1>Contact</h1>
+    <li>
+      <input id="name" class="form_input" type="text" name="client_name" placeholder="Full name" required>
+      <input id="email" class="form_input" type="email" name="client_email" placeholder="Email" required>
+    </li>
+    <li>
+      <textarea id="message" name="client_message" placeholder="Your message" required></textarea>
+    </li>
+    <!--Extra services-->
+    <li>
+      <div class="fob_container">
+
+        <div class="x_srv option_box ob_lvl1">
+          <input id='x_srv' class="fob_check" type="checkbox" name="select_service_check" onclick="openXsrv()">
+          <div class="ob_content">
+            <p>
+              Select Services (Optional)
+            </p>
+          </div>
+        </div>
+
+        <div id="opt_1_container" class="option_box ob_lvl2">
+          <input id="opt_1" value="Remodeling" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Remodeling
+            </p>
+          </div>
+        </div>
+        <div id="fob_1_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website gallery bedroom.jpg"></a>
+          <p>Provide home additions and renovations.
+            Matching existing and new era construction.
+            Consultation on designs provided.</p>
+          <input id="fob_1_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_2_container" class="option_box ob_lvl2">
+          <input id="opt_2" value="Home Restoration/Repairs" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Home Restoration/Repairs
+            </p>
+          </div>
+        </div>
+        <div id="fob_2_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website gallery post wrapping.jpg"></a>
+          <p>Early 20th Century Craftsmanship.
+            We are able to replicate or find an exact match to the styles previously or currently installed in your home.
+            Insurance claims on structural and finish applications.</p>
+          <input id="fob_2_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_3_container" class="option_box ob_lvl2">
+          <input id="opt_3" value="Interior/Exterior Staining and Painting" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Interior/Exterior Staining and Painting
+            </p>
+          </div>
+        </div>
+        <div id="fob_3_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website Gallery Paint.jpg"></a>
+          <p>Attention in details for preparation of surface acquire proper adhesion and warranty expectations.
+            Pressure washing of exterior surfaces to mitigate mildew and dirt.
+            Faux interior finishes.
+            Interior wall repairs ranging from small dents to water damage, cabinet, and door damage repair.   </p>
+          <input id="fob_3_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_4_container" class="option_box ob_lvl2">
+          <input id="opt_4" value="Handyman Services" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Handyman Services
+            </p>
+          </div>
+        </div>
+        <!--TODO: add more description-->
+        <div id="fob_4_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website Handyman.jpg"></a>
+          <p>Most household issues can be addressed with our handyman services.
+            Small items such as, Leveling of Doors & Cabinets, Loose Door Handles & Hinges, Toilet Wobble, Loose Fixtures, Floor Squeaks, Window Functionality, Loose Trim, Home Accessory Installations.
+            Large installs including cabinets, doors and wall additions.
+           </p>
+          <input id="fob_4_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_5_container" class="option_box ob_lvl2">
+          <input id="opt_5" value="Pressure Washing" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Pressure Washing
+            </p>
+          </div>
+        </div>
+        <div id="fob_5_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website pressure washer.jpg"></a>
+          <p><b>Decks</b>, Siding, Roof treatment, Windows, Trim, Sidewalks, Foundations, Outdoor furniture, Awnings, Soffits.</p>
+          <input id="fob_5_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_6_container" class="option_box ob_lvl2">
+          <input id="opt_6" value="Project Management with Consultation" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Project Management with Consultation
+            </p>
+          </div>
+        </div>
+        <div id="fob_6_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website project management.jpg"></a>
+          <p>Help with project organization and consultation.
+            Quality checks on work performed.</p>
+          <input id="fob_6_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_7_container" class="option_box ob_lvl2">
+          <input id="opt_7" value="Flooring Installs" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Flooring Installs
+            </p>
+          </div>
+        </div>
+        <div id="fob_7_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website Flooring install.jpg"></a>
+          <p>All materials considered for installations.</p>
+          <p>Floor leveling and bracing.</p>
+          <p>Referrals to structural engineers.</p>
+          <input id="fob_7_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_8_container" class="option_box ob_lvl2">
+          <input id="opt_8" value="Virtual Remodels" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Virtual Remodels
+            </p>
+          </div>
+        </div>
+        <div id="fob_8_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website Project Workup Fireplace 1.jpg"><img src="images/client/Website Project Workup Fireplace 2.jpg"></a>
+          <p>Create an augmented update to existing home configurations.
+            Provide sample photos of styles you enjoy and let us add them to your home in a digital format before the work begins.
+            It helps greatly with your vision to share and collaborate.</p>
+          <input id="fob_8_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_9_container" class="option_box ob_lvl2">
+          <input id="opt_9" value="Post Services" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Post Services
+            </p>
+          </div>
+        </div>
+        <div id="fob_9_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website Post service handshake.jpg"></a>
+          <p>After project completion we will be committed to touchups along with guarantees pertaining to the work performed.
+            We want our product to look good for many years down the road.</p>
+          <input id="fob_9_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_10_container" class="option_box ob_lvl2">
+          <input id="opt_10" value="Fireplace installation" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Fireplace installation
+            </p>
+          </div>
+        </div>
+        <div id="fob_10_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website fireplace.jpg"></a>
+          <p>Bring new life to an existing fireplace.
+            Gas units can be cleaned and the flame embers refreshed to brighten and ensure you have a clean safe burn.
+            Wood units over time need new gaskets for doors or venting updated to provide a longer cleaner burn.</br>
+            New fireplaces bring the latest in efficiency or can provide the ultimate viewer experience.</br>
+            Consultation is just a phone call away.</p>
+          <input id="fob_10_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_11_container" class="option_box ob_lvl2">
+          <input id="opt_11" value="Basements" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Basements
+            </p>
+          </div>
+        </div>
+        <div id="fob_11_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website Basements.jpg"></a>
+          <p>Update your existing basement configuration.
+            New installations.</p>
+          <input id="fob_11_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+        <div id="opt_12_container" class="option_box ob_lvl2">
+          <input id="opt_12" value="Homeowner Workshops" class="fob_check" type="checkbox" name="xserv_check[]" onclick="toggleDisplay(this)"/>
+          <div class="ob_content">
+            <p>
+              Homeowner Workshops
+            </p>
+          </div>
+        </div>
+        <div id="fob_12_container" class="option_box ob_lvl3">
+          <a class="fwp"><img src="images/client/Website DIY workshop.jpg"></a>
+          <p>If you are interested in learning your way around basic tool use and obtaining a skill set that will help you do repairs or new projects around the home we have the program just for you.
+            Starting summer of 2022 we will be taking volunteers to host at their home.
+            Sign up will include private groups with individuals you know, or inviting anyone from outside your circle to be included on a day of hosting.</br>
+            Projects will be focused on useful items that everyone will likely use under basic woodworking and finishing applications.
+            Each project will touch on specific tool skill development and will always follow a basic tool use principle.
+            More advanced skill practices can be scheduled outside of the main program.
+            Feel the confidence and pride in bringing a new skill into your world.</p>
+          <input id="fob_12_input" class="form_input" type="text" name="extra_service_input[]" placeholder="Description">
+        </div>
+
+      </div>
+    </li>
+    <li>
+      <input id="submit" class="form_input" type="submit" name="submit" value="Send">
+    </li>
+  </ul>
+</form>

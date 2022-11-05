@@ -39,7 +39,7 @@
       }
     }
   	mail($to,$email_subject,$email_body);
-  	header('Location: thank_you.html');
+  	header('Location: thank_you');
   }
 ?>
 <!--If error-->

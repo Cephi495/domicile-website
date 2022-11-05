@@ -111,7 +111,10 @@
 .fob_check[type=checkbox]:checked ~ div{
   color: #ff9933;
 }
-.fob_check[type=checkbox]:checked:hover ~ div{
+.fob_check[type=checkbox]:hover ~ div{
+  color: white;
+}
+.fob_check[type=checkbox]:hover:checked ~ div{
   text-decoration: line-through;
 }
 

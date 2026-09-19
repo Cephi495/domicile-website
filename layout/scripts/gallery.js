@@ -1,6 +1,7 @@
 var a = document.getElementsByTagName('a');
 var img = document.getElementsByTagName('img');
 
+//begins with hiding all gallery photos but featured ones
 $(function() {
   for (j = 0; j < img.length; j++) {
     if (img[j].classList.contains('Featured')){
@@ -11,6 +12,7 @@ $(function() {
   }
 });
 
+//detects active topic selection
 $('.topics').click(function(event) {
   var topic = $(this).attr('id').replace('gallery_', '');
   for (i = 0; i < a.length; i++) {

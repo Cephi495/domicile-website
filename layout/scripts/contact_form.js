@@ -1,3 +1,9 @@
+// Target the container div
+const formContainer = document.getElementById('contact');
+
+// Create the iframe element
+const iframe = document.createElement('iframe');
+
 // Code By Webdevtrick ( https://webdevtrick.com )
 
 //To reveal form
@@ -15,6 +21,14 @@
       envelope.addEventListener('click', this.show);},
     show: function(){
       scrollDisable();
+      // Set the source attributes and configurations
+      iframe.src = 'https://clienthub.getjobber.com/hubs/4e4f5859-fa5b-48c5-84b0-29ae79328b1f/public/requests/5063485/new';
+      iframe.width = '100%';
+      iframe.height = '82%';
+      iframe.style.border = 'none';
+
+      // Append the iframe into the target div
+      formContainer.appendChild(iframe);
       var cf = contactForm,
           container = cf.container,
           config = cf.config;
@@ -37,6 +51,8 @@
     effect: 'fadeToggle', speed: 500
   });
 })();
+
+/*
 
 const contact_form_elements = document.getElementById("contact_form").elements;
 
@@ -91,3 +107,4 @@ submit.addEventListener("click", () => {
     alert(alerts);
   }
 });
+*/

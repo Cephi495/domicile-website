@@ -65,7 +65,7 @@ function openXsrv(){
   }
 }
 
-//Display selected services when "Select Services" bo is clicked
+//Display selected services when "Select Services" botton is clicked
 function toggleDisplay(option){
   var x = option.getAttribute('id').replace(/[^0-9]/g, '');
   if (option.checked == 1){
